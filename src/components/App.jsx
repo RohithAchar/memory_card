@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ScoreBoard from "./ScoreBoard";
 import PictureCard from "./PictureCard";
 import Lost from "./Lost";
+import Spinner from "./Spinner";
 
 let images = [];
 
@@ -11,6 +12,7 @@ const App = () => {
   // const [images, setImages] = useState([]);
   const [showImage, setShowImage] = useState([]);
   const [lost, setLost] = useState(false);
+  const [loading, setLoding] = useState(true);
   // let processed = [];
 
   if (currentScore > maxScore) setMaxScore(currentScore);
@@ -27,6 +29,7 @@ const App = () => {
 
     const res1 = await fetch(data.links.next);
     const data1 = await res1.json();
+    setLoding(false);
     processData([...data.items, ...data1.items]);
   };
 
@@ -81,6 +84,7 @@ const App = () => {
       {lost ? <Lost /> : null}
       <ScoreBoard currentScore={currentScore} maxScore={maxScore} />
       <div className="flex-container">
+        {loading && <Spinner />}
         {showImage.map((img) => {
           return (
             <PictureCard key={img.id} data={img} clickHandler={handleClick} />
