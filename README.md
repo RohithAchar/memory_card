@@ -1,8 +1,14 @@
-# React + Vite
+# Memory Game with React and useEffect Hook
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Features
 
-Currently, two official plugins are available:
+- Fetches data from an API to populate the images.
+- Utilizes React's useEffect hook to handle API calls.
+- Keeps track of the score and resets it if the same image is clicked twice.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Technologies Used
+
+- React
+- JavaScript
+- HTML
+- CSS
