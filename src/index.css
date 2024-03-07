@@ -17,7 +17,7 @@
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
-  padding: 100px 10% 0 10%;
+  padding: 100px 5% 0 5%;
 }
 .card {
   height: 300px;
@@ -76,6 +76,7 @@
   background-color: #222222;
   color: #e7e7e7;
   padding: 10px 100px;
+  z-index: 2;
 
   position: absolute;
   top: -50px;
@@ -150,5 +151,22 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .flex-container {
+    padding: 0;
+    gap: 10px;
+  }
+  .card {
+    max-height: 300px;
+    max-width: 150px;
+  }
+  .card img {
+    transform: translateX(-40px);
+  }
+  .lost {
+    top: -80px;
   }
 }
